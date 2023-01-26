@@ -1,3 +1,4 @@
+import 'package:assainment/screen/mytask.dart';
 import 'package:flutter/material.dart';
 
 class DashBoard extends StatefulWidget {
@@ -22,7 +23,7 @@ class _DashBoardState extends State<DashBoard> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Card(
+         /*     Card(
 
                 child:  Container(
                   color: Colors.blue,
@@ -52,31 +53,46 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                   ),
                 ),
+              ),*/
+              const DrawerHeader(
+                curve: Curves.bounceInOut,
+                  decoration: BoxDecoration(
+
+                  ),
+                  child:  Icon(
+                    Icons.account_circle,
+                    size: 100,
+                  )
               ),
              const SizedBox(height:5),
               _divider(),
               const ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Profile'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                leading: Icon(Icons.person,size: 30,color: Colors.blue,),
+                title: Text('Profile',style: TextStyle(fontSize: 16)),
+                trailing: Icon(Icons.arrow_forward_ios,size: 30,color: Colors.blue,),
+              ),
+              _divider(),
+              InkWell(
+                onTap: (){
+                  Navigator.push(context ,MaterialPageRoute(builder:(context)=>  MyTask()));
+                },
+                child: const ListTile(
+                  leading: Icon(Icons.list,size: 30,color: Colors.blue),
+                  title: Text('My Task',style: TextStyle(fontSize: 16)),
+                  trailing: Icon(Icons.arrow_forward_ios,size: 30,color: Colors.blue),
+                ),
               ),
               _divider(),
               const ListTile(
-                leading: Icon(Icons.list),
-                title: Text('My Task'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                leading: Icon(Icons.hourglass_top,size: 30,color: Colors.blue),
+                title: Text('Rank',style: TextStyle(fontSize: 16)),
+                trailing: Icon(Icons.arrow_forward_ios,size: 30,color: Colors.blue),
               ),
               _divider(),
               const ListTile(
-                leading: Icon(Icons.hourglass_top),
-                title: Text('Rank'),
-                trailing: Icon(Icons.arrow_forward_ios),
-              ),
-              _divider(),
-              const ListTile(
-                leading: Icon(Icons.label_important_outline),
-                title: Text('Points'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                leading: Icon(Icons.label_important_outline,size: 30,color: Colors.blue),
+                title: Text('Points',style: TextStyle(fontSize: 16),),
+                trailing: Icon(Icons.arrow_forward_ios,size: 30,color: Colors.blue),
               ),
               _divider()
             ],
