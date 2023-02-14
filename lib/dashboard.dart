@@ -1,4 +1,5 @@
 import 'package:assainment/screen/mytask.dart';
+import 'package:assainment/screen/todolistscreen.dart';
 import 'package:flutter/material.dart';
 
 class DashBoard extends StatefulWidget {
@@ -94,7 +95,15 @@ class _DashBoardState extends State<DashBoard> {
                 title: Text('Points',style: TextStyle(fontSize: 16),),
                 trailing: Icon(Icons.arrow_forward_ios,size: 30,color: Colors.blue),
               ),
-              _divider()
+              _divider(),
+            InkWell(
+               onTap: () => Navigator.push(context ,MaterialPageRoute(builder:(context)=> const TodoScreen())),
+                child: const ListTile(
+                  leading: Icon(Icons.list_alt_outlined,size: 30,color: Colors.blue),
+                  title: Text('ToDo',style: TextStyle(fontSize: 16),),
+                  trailing: Icon(Icons.arrow_forward_ios,size: 30,color: Colors.blue),
+                ),
+              ),
             ],
           ),
         ),
